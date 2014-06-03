@@ -1,0 +1,23 @@
+{
+  "name": "superford.ru",
+  "version": "0.0.0",
+  "description": "Templates for superford.ru",
+  "author": "Leonard Kinday <leonard@kinday.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kinday/superford.ru.git"
+  },
+  "devDependencies": {
+    "gulp": "",
+    "gulp-util": "",
+    "gulp-jade": "",
+    "gulp-beml": "",
+    "gulp-stylus": "",
+    "gulp-csso": "",
+    "gulp-autoprefixer": "",
+    "gulp-imagemin": "",
+    "gulp-embedlr": "",
+    "gulp-livereload": "",
+    "tiny-lr": ""
+  }
+}
