@@ -7,15 +7,184 @@ html
 
     meta(http-equiv = 'X-UA-Compatible', content = 'IE=edge,chrome=1')
 
-    if document.title
-      title #{document.title}
+    title Автозапчасти «Суперфорд»
 
     meta(name = 'viewport', content = 'width=device-width, initial-scale=1')
 
-    meta(name = 'keywords', lang = 'ru', content != document.keywords)
-    meta(name = 'description', content != document.description)
+    meta(name = 'keywords', lang = 'ru', content = '')
+    meta(name = 'description', content = '')
 
     link(rel = 'stylesheet', href = '/s/screen.css')
 
   body
-    block content
+    div(block = 'bay-wrapper')
+      nav(block = 'bay')
+        div(elem = 'menu')
+          ul(block = 'horizontal-menu')
+            - each item in ['Доставка', 'Оплата', 'Работа с регионами', 'Контакты']
+              li(elem = 'item'): a(elem = 'link', href = '#')= item
+        div(elem = 'social')
+          ul(block = 'social')
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:fb', href = '#') Фейсбук
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:tw', href = '#') Твиттер
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:vk', href = '#') Вконтакте
+
+    header(block = 'header')
+      div(elem = 'logotype')
+        a(block = 'logotype', href = '/') Автозапчасти «Суперфорд»
+      div(elem = 'toolbox')
+        div(elem = 'toolbox-row')
+          dl(block = 'contacts')
+            dt(elem = 'title') +7 (495) <b>988 4830</b>
+            dd(elem = 'desc') г. Москва
+          dl(block = 'contacts')
+            dt(elem = 'title') <b>8 800 988 4830</b>
+            dd(elem = 'desc') бесплатный по России
+          div(block = 'contacts')
+            p(elem = 'skype') superford.ru
+            p(elem = 'address') Лианозовский пр. 8, Москва
+          div(block = 'cart')
+            i(elem = 'icon'): span(elem = 'counter') 25
+            p(elem = 'price') 25 390 <span class="r">руб.</span>
+            a(elem = 'checkout', href = '#') Оформить
+        div(elem = 'toolbox-row')
+          div(block = 'search', mix = 'block:button')
+            input(elem = 'input', type = 'text', placeholder = 'Номер или название детали')
+            input(elem = 'submit', type = 'submit', value = 'Найти')
+          button(block = 'button', mod = 'type:login') Войти
+          button(block = 'button', mod = 'type:sec') Зарегистрироваться
+
+    div(block = 'main')
+      aside(elem = 'sidebar')
+        nav(elem = 'catalogue')
+          ul(block = 'catalogue')
+            li(elem = 'group')
+              a(elem = 'group-link') Пежо
+              ul(elem = 'group-items')
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 2 | Focus 2 (05-11)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 3 | Ford Focus 3 (11-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 3 | Mondeo 3 (01-07)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 4 | Mondeo 4 (07-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (02-08)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (08-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фьюжен | Fusion (02-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Си-МАКС | C-MAX (03-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') S-MAX & GALAXY (06-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Куга | KUGA (08-)
+            li(elem = 'group')
+              a(elem = 'group-link') Ситроен
+              ul(elem = 'group-items')
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 2 | Focus 2 (05-11)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 3 | Ford Focus 3 (11-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 3 | Mondeo 3 (01-07)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 4 | Mondeo 4 (07-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (02-08)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (08-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фьюжен | Fusion (02-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Си-МАКС | C-MAX (03-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') S-MAX & GALAXY (06-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Куга | KUGA (08-)
+            li(elem = 'group')
+              a(elem = 'group-link') Форд
+              ul(elem = 'group-items')
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 2 | Focus 2 (05-11)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фокус 3 | Ford Focus 3 (11-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 3 | Mondeo 3 (01-07)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Мондео 4 | Mondeo 4 (07-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (02-08)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фиеста | Fiesta (08-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Фьюжен | Fusion (02-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Си-МАКС | C-MAX (03-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') S-MAX & GALAXY (06-)
+                li(elem = 'item')
+                  a(elem = 'link', href = '#') Куга | KUGA (08-)
+        dl(block = 'payments')
+          dt(elem = 'title') Мы принимаем оплату через платёжные системы:
+          dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:visa', href = '#') Виза
+          dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:mc', href = '#') Мастер-Кард
+          dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:paypal', href = '#') Пэйпал
+        ul(block = 'phones')
+          li(elem = 'item', mod = 'operator:beeline') +7 (985) <b>876 2192</b> Максим
+          li(elem = 'item', mod = 'operator:beeline') +7 (985) <b>876 2192</b> Дмитрий
+          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Роман
+          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Александр
+          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Денис
+
+      main(elem = 'content')
+        block content
+
+    div(block = 'footer-wrapper')
+      footer(block = 'footer')
+        dl(block = 'linkdump')
+          dt(elem = 'title') Категории
+          dd(elem = 'item'): a(elem = 'link') Ситроен
+          dd(elem = 'item'): a(elem = 'link') Пежо
+          dd(elem = 'item'): a(elem = 'link') Форд
+
+        dl(block = 'linkdump')
+          dt(elem = 'title') Инофрмация
+          dd(elem = 'item'): a(elem = 'link') Скидки
+          dd(elem = 'item'): a(elem = 'link') Новые товары
+          dd(elem = 'item'): a(elem = 'link') Популярные товары
+          dd(elem = 'item'): a(elem = 'link') Свяжитесь с нами
+          dd(elem = 'item'): a(elem = 'link') Карта сайта
+
+        dl(block = 'linkdump')
+          dt(elem = 'title') Клиентам
+          dd(elem = 'item'): a(elem = 'link') Доставка
+          dd(elem = 'item'): a(elem = 'link') Оплата
+          dd(elem = 'item'): a(elem = 'link') Работа с регионами
+          dd(elem = 'item'): a(elem = 'link') Контакты
+
+        dl(block = 'linkdump')
+          dt(elem = 'title') Моя учётная запись
+          dd(elem = 'item'): a(elem = 'link') Мои заказы
+          dd(elem = 'item'): a(elem = 'link') Мои кредитные квитанции
+          dd(elem = 'item'): a(elem = 'link') Мои адреса
+          dd(elem = 'item'): a(elem = 'link') Моя личная информация
+
+        dl(block = 'contact-info')
+          dt(elem = 'title') Контактная информация
+          dd(elem = 'item'): a(elem = 'link', mod = 'type:geo') Лианозовский пр. 8, Москва
+          dd(elem = 'item') Тел.: +7 (495) 961 5113
+          dd(elem = 'item') Эл. почта: <a href="mailto:zap@superford.ru">zap@superford.ru</a>
+          dd(elem = 'item') © СуперФорд 1999...2014
+
+        div(block = 'mark')
+          a(elem = 'link', href = '#') Дизайн
+          a(elem = 'icon', href = '#') Harley Quinn
