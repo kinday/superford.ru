@@ -1,3 +1,29 @@
 extends default.layout
 
 block content
+  div(style = 'height:200px;margin-bottom:40px;background:rgb(128,128,128);color:rgb(200,200,200);font-size:48px;font-style:italic;line-height:200px;text-align:center;') TODO: слайдер
+
+  div(block = 'news')
+    div(elem = 'teaser')
+      article(block = 'post-teaser')
+        h2(elem = 'title') График работы на новогодние праздники
+        time(elem = 'date')
+          <span elem="day">29</span> <span elem="month">сентября</span>
+        section(elem = 'lead')
+          p График работы компании «Пежон.ру» в праздничные дни 31 декабря – короткий день с 9:00 до 15:00 1,2 января – выходной день 3,4,5,6 января –...
+    hr(block = 'wave')
+    div(elem = 'teaser')
+      article(block = 'post-teaser')
+        h2(elem = 'title') График работы на новогодние праздники
+        time(elem = 'date')
+          <span elem="day">21</span> <span elem="month">сентября</span>
+        section(elem = 'lead')
+          p График работы компании «Пежон.ру» в праздничные дни 31 декабря – короткий день с 9:00 до 15:00 1,2 января – выходной день 3,4,5,6 января –...
+    hr(block = 'wave')
+    div(elem = 'teaser')
+      article(block = 'post-teaser')
+        h2(elem = 'title') График работы на новогодние праздники
+        time(elem = 'date')
+          <span elem="day">15</span> <span elem="month">сентября</span>
+        section(elem = 'lead')
+          p График работы компании «Пежон.ру» в праздничные дни 31 декабря – короткий день с 9:00 до 15:00 1,2 января – выходной день 3,4,5,6 января –...
