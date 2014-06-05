@@ -1,0 +1,624 @@
+@import 'reset'
+
+
+blue = rgb(5,140,200)
+green = rgb(135,205,70)
+
+
+
+// *
+//   outline 1px solid rgba(red,.5)
+
+
+
+html
+  color black
+  font 14px/25px 'Open Sans', Helvetica, Tahoma, Arial, sans-serif
+
+
+
+body
+  min-width 1100px
+  margin 0 auto
+
+  &.is-scrolling *
+    pointer-events none !important
+
+
+
+a
+  &:hover
+  &:active
+    // color green
+    color shade(blue,50%)
+
+
+
+.h-ir // Image replacement
+  border 0
+  font 0/0 a
+  text-shadow none
+  color transparent
+
+
+
+.h-wrapper // Global maximum width
+  max-width 1160px
+  margin 0 auto
+  padding-left 30px
+  padding-right 30px
+
+
+
+.bay-wrapper
+  background-image url('../i/bar.png')
+  background-image uri('../i/bar.png')
+
+  color white
+
+
+
+.bay
+  @extend .h-wrapper
+
+  position relative // pos:abs inside
+
+  padding-top 15px
+  padding-bottom 15px
+
+
+
+.button
+  padding 10px 7px
+
+  background-color tint(blue,10%)
+  background-image linear-gradient(to bottom, rgba(0,0,0,0), rgba(shade(blue,50%),.25) 50%, rgba(0,0,0,0))
+  border-radius 10px
+  box-shadow inset 0 -3px 5px rgba(255,255,255,.35), 0 2px 6px -2px rgba(0,0,0,.35), 0 1px 1px -1px rgba(0,0,0,.35)
+  cursor pointer
+
+  color white
+  font-weight 700
+
+  transition background-color .25s .1s
+
+  &:hover
+    background-color tint(blue,35%)
+
+    transition none
+
+  &:active
+    position relative
+    top 1px
+
+  &_type
+    &_login
+      background-color tint(green,10%)
+      background-image linear-gradient(to bottom, rgba(255,255,255,.25), rgba(shade(green,50%),.25) 50%, rgba(255,255,255,.25))
+
+      &:hover
+        background-color shade(green,10%)
+
+    &_sec
+      background-color tint(rgb(240,240,240),10%)
+      background-image linear-gradient(to bottom, rgba(0,0,0,0), rgba(shade(rgb(240,240,240),50%),.25) 50%, rgba(0,0,0,0))
+
+      color rgb(100,100,100)
+
+      transition background-color .25s .1s, color .25s .1s
+
+      &:hover
+        background-color tint(blue,85%)
+
+        color shade(blue,50%)
+
+  &_width
+    &_full
+      width 100%
+
+
+
+.cart
+  position relative
+
+  padding-left 86px
+
+  &__checkout
+    color blue
+
+  &__counter
+    position absolute
+    left 35px
+    top 33px
+
+    padding 4px 8px
+
+    background-color blue
+    border-radius 15px
+
+    color white
+    font-weight 700
+    line-height 14px
+
+  &__icon
+    display block
+
+    position absolute
+    top 50%
+    left 0
+
+    width 56px
+    height 44px
+    margin-top -22px
+
+    background-image url('../i/cart__icon.png')
+    background-image uri('../i/cart__icon.png')
+    background-position center center
+    background-repeat no-repeat
+
+  &__price
+    font-size 20px
+    font-weight 700
+
+
+
+.catalogue
+  &__group
+    padding-bottom 20px
+
+  &__group-items
+    color blue
+
+  &__group-link
+    position relative
+
+    font 700 24px/25px 'PT Serif', Georgia, Times, 'Times New Roman', serif
+    text-decoration none
+
+    transition .25s .1s
+
+    &:before
+      content ''
+
+      display block
+
+      position absolute
+      top 50%
+      left 0
+
+      width 12px
+      height 12px
+      margin-top -6px
+
+      background-image url('../i/catalogue__group-link.png')
+      background-image uri('../i/catalogue__group-link.png')
+      background-position left center
+      background-repeat no-repeat
+      opacity 0
+
+      transform rotate(1080deg)
+
+      transition opacity .25s .15s, transform .25s .1s
+
+    &.is-dynamic
+      margin-left -20px
+      padding-left 20px
+
+      background-image url('../i/catalogue__group-link_is_active.png')
+      background-image uri('../i/catalogue__group-link_is_active.png')
+      background-position left center
+      background-repeat no-repeat
+
+      &.is-active
+        color rgb(196,196,196)
+
+        &:before
+          opacity 1
+
+          transform rotate(0)
+
+          transition opacity .25s, transform .25s .1s
+
+
+
+.contact
+  vertical-align top
+
+  &__title
+    font-size 20px
+    font-weight 300
+
+  &__desc
+    color tint(black,50%)
+    font 13px/25px 'PT Serif', Georgia, Times, 'Times New Roman', serif
+    font-style italic
+
+  &__link
+    display block
+
+    color blue
+    font-size 14px
+    font-weight bold
+    line-height 24px
+
+
+
+.contact-info
+  display inline-block
+
+  color rgb(128,128,128)
+  font-size 13px
+  text-align right
+  vertical-align top
+
+  &__title
+    display none
+
+  &__link:hover
+    color black
+
+
+
+.footer-wrapper
+  background-color rgb(217,217,217)
+
+
+
+.footer
+  @extend .h-wrapper
+
+  position relative
+
+  padding-top 20px
+  padding-bottom 20px
+
+  text-align justify
+
+  &:after
+    content ''
+
+    display inline-block
+
+    width 100%
+
+
+
+.header-wrapper
+  padding 20px 0
+
+  background-image url('../i/header.png')
+  background-image uri('../i/header.png')
+  background-position center top
+  background-repeat repeat-x
+
+
+
+.header
+  @extend .h-wrapper
+
+  display table
+
+  width 100%
+
+  &__logotype
+  &__toolbox
+    display table-cell
+
+  &__logotype
+    width 250px
+    padding-right 20px
+
+
+
+.icon
+  display inline-block
+
+  margin-right .5em
+
+  background-position center center
+  background-repeat no-repeat
+
+  vertical-align middle
+
+  &__beeline
+    width 13px
+    height 13px
+    margin-top -1px
+
+    background-image url('../i/icon__beeline.png')
+    background-image uri('../i/icon__beeline.png')
+
+  &__geo
+    width 12px
+    height 12px
+
+    background-image url('../i/icon__geo.png')
+    background-image uri('../i/icon__geo.png')
+
+  &__login
+    width 20px
+    height 10px
+
+    background-image url('../i/icon__login.png')
+    background-image uri('../i/icon__login.png')
+
+  &__mts
+    width 13px
+    height 13px
+    margin-top -1px
+
+    background-image url('../i/icon__mts.png')
+    background-image uri('../i/icon__mts.png')
+
+  &__skype
+    width 12px
+    height 12px
+
+    background-image url('../i/icon__skype.png')
+    background-image uri('../i/icon__skype.png')
+
+
+
+.input
+  background-color white
+  border-radius 5px
+
+
+
+.linkdump
+  display inline-block
+
+  padding-right 40px
+
+  vertical-align top
+
+  &__title
+    font-weight 700
+    text-transform uppercase
+
+  &__link
+    color blue
+    font-size 13px
+
+
+
+.logotype
+  @extend .h-ir
+
+  display block
+
+  width 140px
+  height 115px
+
+  background-image url('../i/logotype.png')
+  background-image uri('../i/logotype.png')
+  background-position center center
+  background-repeat no-repeat
+
+
+
+.main
+  @extend .h-wrapper
+
+  display table
+
+  width 100%
+  padding-bottom 150px
+
+  background-image url('../i/main.png')
+  background-image uri('../i/main.png')
+  background-position right bottom
+  background-repeat no-repeat
+
+  &__sidebar
+  &__content
+    display table-cell
+
+  &__sidebar
+    width 250px
+
+
+
+.mark
+  position absolute
+  bottom 20px
+  right 30px
+
+  color blue
+
+  vertical-align middle
+
+  &__icon
+  &__link
+    display inline-block
+
+    vertical-align middle
+
+  &__icon
+    @extend .h-ir
+
+    width 21px
+    height 28px
+    margin-left 10px
+
+    background-image url('../i/mark__icon.png')
+    background-image uri('../i/mark__icon.png')
+    background-position center center
+    background-repeat no-repeat
+
+
+
+.menu
+  font-size 0 // d:ib inside
+  line-height 0 // d:ib inside
+
+  &__item
+    display inline-block
+
+    font-size 16px
+    font-weight 700
+    line-height 16px
+
+    &:not(:first-child)
+      margin-left .75em
+
+      &:before
+        content '•'
+
+        display inline-block
+
+        margin-right @margin-left
+
+  &__link
+    &:hover
+      color green
+
+
+.payment-icon
+  @extend .h-ir
+
+  display block
+
+  height 21px
+
+  background-position center center
+  background-repeat no-repeat
+
+  &_system
+    &_mc
+      width 32px
+
+      background-image url('../i/payment-icon_system_mc.png')
+      background-image uri('../i/payment-icon_system_mc.png')
+
+    &_paypal
+      width 61px
+
+      background-image url('../i/payment-icon_system_paypal.png')
+      background-image uri('../i/payment-icon_system_paypal.png')
+
+    &_visa
+      width 33px
+
+      background-image url('../i/payment-icon_system_visa.png')
+      background-image uri('../i/payment-icon_system_visa.png')
+
+
+.payments-info
+  padding-bottom 20px
+
+  &__title
+    display none
+
+  &__item
+    display inline-block
+
+
+
+.search
+  width 100%
+  min-width 450px
+  padding 7px
+
+  background-color tint(blue,10%)
+  background-image linear-gradient(to bottom, rgba(tint(blue,50%),.25), rgba(shade(blue,50%),.25) 50%, rgba(tint(blue,50%),.25))
+  border-radius 10px
+
+  white-space nowrap
+
+  &__input
+    width 85%
+
+    padding 8px 10px 5px
+
+    background-color white
+    border-radius 4px
+
+    font-style italic
+    line-height 16px
+
+  &__submit
+    width 15%
+    padding 7px 0 4px
+
+    cursor pointer
+
+    color white
+    font-weight 700
+    line-height 16px
+
+    vertical-align middle
+
+    transition text-shadow .25s .1s
+
+    &:hover
+      text-shadow 0 0 5px rgba(shade(blue,50%),.75)
+
+      transition none
+
+    &:active
+      position relative
+      top 1px
+
+
+
+.social
+  position absolute
+  top 50%
+  right 20px
+
+  margin-top -20px
+
+  font-size 0 // d:ib inside
+  line-height 0 // d:ib inside
+
+  &__item
+    display inline-block
+
+  &__link
+    @extend .h-ir
+
+    display block
+
+    width 40px
+    height 40px
+
+    background-position center center
+    background-repeat no-repeat
+    opacity .8
+
+    transition opacity .25s .1s
+
+    &:hover
+      opacity 1
+
+      transition none
+
+    &_icon
+      &_fb
+        background-image url('../i/social__link_icon_fb.png')
+        background-image uri('../i/social__link_icon_fb.png')
+
+      &_tw
+        background-image url('../i/social__link_icon_tw.png')
+        background-image uri('../i/social__link_icon_tw.png')
+
+      &_vk
+        background-image url('../i/social__link_icon_vk.png')
+        background-image uri('../i/social__link_icon_vk.png')
+
+
+
+.toolbox-row
+  display table
+
+  width 100%
+  margin-bottom 20px
+
+  &__cell
+    display table-cell
+
+    vertical-align top
+
+    &:not(:last-child)
+      padding-right 10px

@@ -15,51 +15,67 @@ html
     meta(name = 'description', content = '')
 
     link(rel = 'stylesheet', href = '/s/screen.css')
+    link(rel = 'stylesheet', href = 'http://fonts.googleapis.com/css?family=PT+Serif:700,400italic|Open+Sans:300italic,400italic,700italic,400,700,300&subset=latin,cyrillic')
+
 
   body
     div(block = 'bay-wrapper')
       nav(block = 'bay')
         div(elem = 'menu')
-          ul(block = 'horizontal-menu')
+          ul(block = 'menu')
             - each item in ['Доставка', 'Оплата', 'Работа с регионами', 'Контакты']
               li(elem = 'item'): a(elem = 'link', href = '#')= item
         div(elem = 'social')
           ul(block = 'social')
-            li(elem = 'item'): a(elem = 'link', mod != 'icon:fb', href = '#') Фейсбук
-            li(elem = 'item'): a(elem = 'link', mod != 'icon:tw', href = '#') Твиттер
-            li(elem = 'item'): a(elem = 'link', mod != 'icon:vk', href = '#') Вконтакте
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:fb', href = '#', title = 'Фейсбук') Фейсбук
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:tw', href = '#', title = 'Твиттер') Твиттер
+            li(elem = 'item'): a(elem = 'link', mod != 'icon:vk', href = '#', title = 'Вконтакте') Вконтакте
 
-    header(block = 'header')
-      div(elem = 'logotype')
-        a(block = 'logotype', href = '/') Автозапчасти «Суперфорд»
-      div(elem = 'toolbox')
-        div(elem = 'toolbox-row')
-          dl(block = 'contacts')
-            dt(elem = 'title') +7 (495) <b>988 4830</b>
-            dd(elem = 'desc') г. Москва
-          dl(block = 'contacts')
-            dt(elem = 'title') <b>8 800 988 4830</b>
-            dd(elem = 'desc') бесплатный по России
-          div(block = 'contacts')
-            p(elem = 'skype') superford.ru
-            p(elem = 'address') Лианозовский пр. 8, Москва
-          div(block = 'cart')
-            i(elem = 'icon'): span(elem = 'counter') 25
-            p(elem = 'price') 25 390 <span class="r">руб.</span>
-            a(elem = 'checkout', href = '#') Оформить
-        div(elem = 'toolbox-row')
-          div(block = 'search', mix = 'block:button')
-            input(elem = 'input', type = 'text', placeholder = 'Номер или название детали')
-            input(elem = 'submit', type = 'submit', value = 'Найти')
-          button(block = 'button', mod = 'type:login') Войти
-          button(block = 'button', mod = 'type:sec') Зарегистрироваться
+    div(block = 'header-wrapper')
+      header(block = 'header')
+        div(elem = 'logotype')
+          a(block = 'logotype', href = '/') Автозапчасти «Суперфорд»
+        div(elem = 'toolbox')
+          div(block = 'toolbox-row')
+            div(elem = 'cell')
+              dl(block = 'contact')
+                dt(elem = 'title') +7 (495) <b>988 4830</b>
+                dd(elem = 'desc') г. Москва
+            div(elem = 'cell')
+              dl(block = 'contact')
+                dt(elem = 'title') <b>8 800 988 4830</b>
+                dd(elem = 'desc') бесплатный по России
+            div(elem = 'cell')
+              div(block = 'contact')
+                a(elem = 'link', href = 'skype:superford.ru?chat')
+                  i.icon(mix = 'block:icon,elem:skype')
+                  | superford.ru
+                a(elem = 'link', href = '#')
+                  i.icon(mix = 'block:icon,elem:geo')
+                  | Лианозовский пр. 8
+            div(elem = 'cell')
+              div(block = 'cart')
+                i(elem = 'icon'): span(elem = 'counter') 25
+                p(elem = 'price') 25 390 <span class="r">руб.</span>
+                a(elem = 'checkout', href = '#') Оформить
+          div(block = 'toolbox-row')
+            div(elem = 'cell')
+              div(block = 'search')
+                input(elem = 'input', type = 'text', placeholder = 'Номер или название детали')
+                input(elem = 'submit', type = 'submit', value = 'Найти')
+            div(elem = 'cell')
+              button(block = 'button', mod = 'type:login,width:full')
+                i.icon(mix = 'block:icon,elem:login')
+                | Войти
+            div(elem = 'cell')
+              button(block = 'button', mod = 'type:sec,width:full') Зарегистрироваться
 
     div(block = 'main')
       aside(elem = 'sidebar')
         nav(elem = 'catalogue')
           ul(block = 'catalogue')
             li(elem = 'group')
-              a(elem = 'group-link') Пежо
+              a(elem = 'group-link', href = '#') Форд
               ul(elem = 'group-items')
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
@@ -84,7 +100,7 @@ html
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Куга | KUGA (08-)
             li(elem = 'group')
-              a(elem = 'group-link') Ситроен
+              a(elem = 'group-link', href = '#') Пежо
               ul(elem = 'group-items')
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
@@ -109,7 +125,7 @@ html
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Куга | KUGA (08-)
             li(elem = 'group')
-              a(elem = 'group-link') Форд
+              a(elem = 'group-link', href = '#') Ситроен
               ul(elem = 'group-items')
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Фокус 1 | Focus 1 (98-05)
@@ -133,17 +149,27 @@ html
                   a(elem = 'link', href = '#') S-MAX & GALAXY (06-)
                 li(elem = 'item')
                   a(elem = 'link', href = '#') Куга | KUGA (08-)
-        dl(block = 'payments')
+        dl(block = 'payments-info')
           dt(elem = 'title') Мы принимаем оплату через платёжные системы:
           dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:visa', href = '#') Виза
           dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:mc', href = '#') Мастер-Кард
           dd(elem = 'item'): a(block = 'payment-icon', mod = 'system:paypal', href = '#') Пэйпал
         ul(block = 'phones')
-          li(elem = 'item', mod = 'operator:beeline') +7 (985) <b>876 2192</b> Максим
-          li(elem = 'item', mod = 'operator:beeline') +7 (985) <b>876 2192</b> Дмитрий
-          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Роман
-          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Александр
-          li(elem = 'item', mod = 'operator:mts') +7 (985) <b>876 2192</b> Денис
+          li(elem = 'item')
+            i.icon(mix = 'block:icon,elem:beeline')
+            | +7 (985) <b>876 2192</b> — Максим
+          li(elem = 'item')
+            i.icon(mix = 'block:icon,elem:beeline')
+            | +7 (985) <b>876 2192</b> — Дмитрий
+          li(elem = 'item')
+            i.icon(mix = 'block:icon,elem:mts')
+            | +7 (985) <b>876 2192</b> — Роман
+          li(elem = 'item')
+            i.icon(mix = 'block:icon,elem:mts')
+            | +7 (985) <b>876 2192</b> — Александр
+          li(elem = 'item')
+            i.icon(mix = 'block:icon,elem:mts')
+            | +7 (985) <b>876 2192</b> — Денис
 
       main(elem = 'content')
         block content
@@ -152,39 +178,43 @@ html
       footer(block = 'footer')
         dl(block = 'linkdump')
           dt(elem = 'title') Категории
-          dd(elem = 'item'): a(elem = 'link') Ситроен
-          dd(elem = 'item'): a(elem = 'link') Пежо
-          dd(elem = 'item'): a(elem = 'link') Форд
+          dd(elem = 'item'): a(elem = 'link', href = '#') Ситроен
+          dd(elem = 'item'): a(elem = 'link', href = '#') Пежо
+          dd(elem = 'item'): a(elem = 'link', href = '#') Форд
 
         dl(block = 'linkdump')
-          dt(elem = 'title') Инофрмация
-          dd(elem = 'item'): a(elem = 'link') Скидки
-          dd(elem = 'item'): a(elem = 'link') Новые товары
-          dd(elem = 'item'): a(elem = 'link') Популярные товары
-          dd(elem = 'item'): a(elem = 'link') Свяжитесь с нами
-          dd(elem = 'item'): a(elem = 'link') Карта сайта
+          dt(elem = 'title') Информация
+          dd(elem = 'item'): a(elem = 'link', href = '#') Скидки
+          dd(elem = 'item'): a(elem = 'link', href = '#') Новые товары
+          dd(elem = 'item'): a(elem = 'link', href = '#') Популярные товары
+          dd(elem = 'item'): a(elem = 'link', href = '#') Свяжитесь с нами
+          dd(elem = 'item'): a(elem = 'link', href = '#') Карта сайта
 
         dl(block = 'linkdump')
           dt(elem = 'title') Клиентам
-          dd(elem = 'item'): a(elem = 'link') Доставка
-          dd(elem = 'item'): a(elem = 'link') Оплата
-          dd(elem = 'item'): a(elem = 'link') Работа с регионами
-          dd(elem = 'item'): a(elem = 'link') Контакты
+          dd(elem = 'item'): a(elem = 'link', href = '#') Доставка
+          dd(elem = 'item'): a(elem = 'link', href = '#') Оплата
+          dd(elem = 'item'): a(elem = 'link', href = '#') Работа с регионами
+          dd(elem = 'item'): a(elem = 'link', href = '#') Контакты
 
         dl(block = 'linkdump')
           dt(elem = 'title') Моя учётная запись
-          dd(elem = 'item'): a(elem = 'link') Мои заказы
-          dd(elem = 'item'): a(elem = 'link') Мои кредитные квитанции
-          dd(elem = 'item'): a(elem = 'link') Мои адреса
-          dd(elem = 'item'): a(elem = 'link') Моя личная информация
+          dd(elem = 'item'): a(elem = 'link', href = '#') Мои заказы
+          dd(elem = 'item'): a(elem = 'link', href = '#') Мои кредитные квитанции
+          dd(elem = 'item'): a(elem = 'link', href = '#') Мои адреса
+          dd(elem = 'item'): a(elem = 'link', href = '#') Моя личная информация
 
         dl(block = 'contact-info')
           dt(elem = 'title') Контактная информация
-          dd(elem = 'item'): a(elem = 'link', mod = 'type:geo') Лианозовский пр. 8, Москва
+          dd(elem = 'item'): a(elem = 'link', href = '#')
+            i.icon(mix = 'block:icon,elem:geo')
+            | Лианозовский пр. 8, Москва
           dd(elem = 'item') Тел.: +7 (495) 961 5113
-          dd(elem = 'item') Эл. почта: <a href="mailto:zap@superford.ru">zap@superford.ru</a>
+          dd(elem = 'item') Эл. почта: <a class="contact-info__link" href="mailto:zap@superford.ru">zap@superford.ru</a>
           dd(elem = 'item') © СуперФорд 1999...2014
 
         div(block = 'mark')
           a(elem = 'link', href = '#') Дизайн
           a(elem = 'icon', href = '#') Harley Quinn
+
+  script(src = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js')
