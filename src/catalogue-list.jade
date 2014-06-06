@@ -1,0 +1,89 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Форд
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Фокус-1 98-05
+      li(elem = 'item') Безопасность
+
+  h1(block = 'title') Безопасность
+
+  table(block = 'products')
+    thead(elem = 'header')
+      th(elem = 'header-title')
+      th(elem = 'header-title') Наименование
+      th(elem = 'header-title') Страна производства
+      th(elem = 'header-title') Наличие
+      th(elem = 'header-title') Цена
+      //- th(elem = 'header-title')
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_mirror.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td Тайвань
+      td
+        p(block = 'product-status', mod = 'is:available') В магазине 6 шт.
+        button(block = 'button', mod = 'type:buy,size:small')
+          i.icon(block = 'icon', elem = 'buy')
+          | Купить
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      //- td: i.icon(block = 'icon', elem = 'buy')
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_brakes.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td Германия
+      td
+        p(block = 'product-status', mod = 'is:warehouse') Есть на складе
+        button(block = 'button', mod = 'type:order,size:small')
+          i.icon(block = 'icon', elem = 'order')
+          | Заказать
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      //- td: i.icon(block = 'icon', elem = 'buy')
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_pepyaka.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td Россия
+      td
+        p(block = 'product-status', mod = 'is:unavailable') Нет в наличии
+        button(block = 'button', mod = 'type:request,size:small')
+          i.icon(block = 'icon', elem = 'request')
+          | Оставить заявку
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      //- td: i.icon(block = 'icon', elem = 'buy')
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_overdrive.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td Польша
+      td
+        p(block = 'product-status', mod = 'is:available') В магазине 6 шт.
+        button(block = 'button', mod = 'type:buy,size:small')
+          i.icon(block = 'icon', elem = 'buy')
+          | Купить
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      //- td: i.icon(block = 'icon', elem = 'buy')
+
+  nav(block='content', elem = 'pagination')
+    ul(block = 'pagination')
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec'): span(block = 'fontless') ❮
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec').is-active 1
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec') 2
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec') 3
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec') 4
+      li(elem = 'item'): a(block = 'button', mod = 'size:small,type:sec'): span(block = 'fontless') ❯

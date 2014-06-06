@@ -3,6 +3,7 @@
 
 blue = rgb(5,140,200)
 green = rgb(135,205,70)
+gray = rgb(200,200,200)
 
 
 
@@ -68,6 +69,36 @@ a
 
 
 
+.breadcrumbs
+  padding-bottom 20px
+
+  font-size 0 // d:ib inside
+
+  &__item
+    display inline-block
+
+    font-size 14px
+
+    &:after
+      content '\2794'
+
+      display inline-block
+
+      padding 0 .5em
+
+      color tint(blue,50%)
+
+    &:last-child
+      font-weight bold
+
+      &:after
+        content none
+
+  &__link
+    color blue
+
+
+
 .button
   padding 10px 7px
 
@@ -79,6 +110,7 @@ a
 
   color white
   font-weight 700
+  text-shadow 0 -1px 0 rgba(0,0,0,.2)
 
   transition background-color .25s .1s
 
@@ -91,19 +123,37 @@ a
     position relative
     top 1px
 
+  &_size
+    &_small
+      padding 4px 10px
+
+      border-radius 5px
+
+      box-shadow inset 0 -1px 3px rgba(255,255,255,.35), 0 2px 6px -2px rgba(0,0,0,.35), 0 1px 1px 0 rgba(0,0,0,.15)
+
   &_type
+    &_buy
     &_login
-      background-color tint(green,10%)
+      background-color green
       background-image linear-gradient(to bottom, rgba(255,255,255,.25), rgba(shade(green,50%),.25) 50%, rgba(255,255,255,.25))
 
       &:hover
         background-color shade(green,10%)
 
+    &_order
+      background-color rgb(220,120,0)
+      background-image linear-gradient(to bottom, rgba(255,255,255,.25), rgba(shade(rgb(220,120,0),50%),.25) 50%, rgba(255,255,255,.25))
+
+      &:hover
+        background-color shade(rgb(220,120,0),10%)
+
+    &_request
     &_sec
       background-color tint(rgb(240,240,240),10%)
       background-image linear-gradient(to bottom, rgba(0,0,0,0), rgba(shade(rgb(240,240,240),50%),.25) 50%, rgba(0,0,0,0))
 
       color rgb(100,100,100)
+      text-shadow 0 1px 0 rgba(255,255,255,.2)
 
       transition background-color .25s .1s, color .25s .1s
 
@@ -115,6 +165,12 @@ a
   &_width
     &_full
       width 100%
+
+  &.is-active
+    background-color tint(blue,10%)
+    background-image linear-gradient(to bottom, rgba(255,255,255,.2), rgba(shade(blue,50%),.25) 50%, rgba(0,0,0,0))
+    box-shadow inset 0 2px 6px rgba(0,0,0,.25)
+    color white
 
 
 
@@ -172,7 +228,6 @@ a
   &__group-link
     position relative
 
-    font 700 24px/25px 'PT Serif', Georgia, Times, 'Times New Roman', serif
     text-decoration none
 
     transition .25s .1s
@@ -227,6 +282,7 @@ a
   &__title
     font-size 20px
     font-weight 300
+    letter-spacing .05em
 
   &__desc
     color tint(black,50%)
@@ -256,6 +312,100 @@ a
 
   &__link:hover
     color black
+
+
+
+.content
+  &__pagination
+    padding 20px 0
+
+
+
+.details
+  display flex
+  flex-wrap wrap
+
+  border-bottom 1px solid gray
+
+  font-size 0
+
+  &__item
+    display inline-block
+    flex-grow 1
+
+    min-width 14.285%
+    padding 20px 0 10px
+
+    border-top 1px solid gray
+
+    color blue
+    font-size 13px
+    line-height 20px
+
+
+.detail-type
+  display block
+
+  padding 15px 20px
+
+  &__icon
+    display block
+
+    width 62px
+    height 37px
+    margin 0 auto
+
+    background-position center center
+    background-repeat no-repeat
+
+    &_id
+      &_body
+        background-image url('../i/detail-type__icon_id_body.png')
+        background-image uri('../i/detail-type__icon_id_body.png')
+
+      &_chassis
+        background-image url('../i/detail-type__icon_id_chassis.png')
+        background-image uri('../i/detail-type__icon_id_chassis.png')
+
+      &_climate
+        background-image url('../i/detail-type__icon_id_climate.png')
+        background-image uri('../i/detail-type__icon_id_climate.png')
+
+      &_engine
+        background-image url('../i/detail-type__icon_id_engine.png')
+        background-image uri('../i/detail-type__icon_id_engine.png')
+
+      &_gauges
+        background-image url('../i/detail-type__icon_id_gauges.png')
+        background-image uri('../i/detail-type__icon_id_gauges.png')
+
+      &_lights
+        background-image url('../i/detail-type__icon_id_lights.png')
+        background-image uri('../i/detail-type__icon_id_lights.png')
+
+      &_liquids
+        background-image url('../i/detail-type__icon_id_liquids.png')
+        background-image uri('../i/detail-type__icon_id_liquids.png')
+
+      &_seats
+        background-image url('../i/detail-type__icon_id_seats.png')
+        background-image uri('../i/detail-type__icon_id_seats.png')
+
+      &_transmission
+        background-image url('../i/detail-type__icon_id_transmission.png')
+        background-image uri('../i/detail-type__icon_id_transmission.png')
+
+  &__title
+    display block
+
+    padding 5px 0
+
+    text-align center
+
+
+
+.fontless
+  font sans-serif
 
 
 
@@ -310,6 +460,15 @@ a
 
 
 
+.heading
+  display block
+
+  padding 10px 0
+
+  font 700 24px/25px 'PT Serif', Georgia, Times, 'Times New Roman', serif
+
+
+
 .icon
   display inline-block
 
@@ -327,6 +486,14 @@ a
 
     background-image url('../i/icon__beeline.png')
     background-image uri('../i/icon__beeline.png')
+
+  &__buy
+    width 20px
+    height 16px
+    margin-top -3px
+
+    background-image url('../i/icon__buy.png')
+    background-image uri('../i/icon__buy.png')
 
   &__geo
     width 12px
@@ -349,6 +516,22 @@ a
 
     background-image url('../i/icon__mts.png')
     background-image uri('../i/icon__mts.png')
+
+  &__order
+    width 15px
+    height 16px
+    margin-top -3px
+
+    background-image url('../i/icon__order.png')
+    background-image uri('../i/icon__order.png')
+
+  &__request
+    width 22px
+    height 11px
+    margin-top -1px
+
+    background-image url('../i/icon__request.png')
+    background-image uri('../i/icon__request.png')
 
   &__skype
     width 12px
@@ -374,6 +557,7 @@ a
 
   &__title
     font-weight 700
+    letter-spacing .05em
     text-transform uppercase
 
   &__link
@@ -483,6 +667,12 @@ a
 
 
 
+.pagination
+  &__item
+    display inline-block
+
+
+
 .payment-icon
   @extend .h-ir
 
@@ -536,7 +726,7 @@ a
 
     width 80px
 
-    color rgb(200,200,200)
+    color gray
     font-weight 700
     text-align center
 
@@ -555,6 +745,73 @@ a
 
 
 
+.product-status
+  padding-bottom 5px
+
+  font-size 13px
+  white-space nowrap
+
+  &_is
+    &_available
+      color shade(green,10%)
+
+    &_warehouse
+      color shade(rgb(220,120,0),10%)
+
+    &_unavailable
+      color shade(gray,10%)
+
+
+.products
+  width 100%
+
+  color rgb(100,100,100)
+  line-height 20px
+  text-align center
+
+  vertical-align middle
+
+  th
+  td
+    padding 10px
+
+    &:first-child
+      padding-left 0
+
+    &:last-child
+      padding-right 0
+
+  &__header
+    border-bottom 1px solid gray
+
+    color gray
+    font-size 13px
+
+  &__price
+    white-space nowrap
+
+  &__row
+    border-bottom 1px solid gray
+
+    &:hover
+      color blue
+
+  &__title
+    max-width 240px
+
+  &__titles
+    text-align left
+    text-transform uppercase
+
+
+
+.r
+  display inline-block
+
+  vertical-align baseline
+
+
+
 .search
   width 100%
   min-width 450px
@@ -568,7 +825,6 @@ a
 
   &__input
     width 85%
-
     padding 8px 10px 5px
 
     background-color white
@@ -599,6 +855,68 @@ a
     &:active
       position relative
       top 1px
+
+
+
+.shelf-wrapper
+  padding 10px 0 60px
+
+  text-align center
+
+
+
+.shelf
+  display inline-block
+
+  position relative
+
+  min-height 96px
+  margin 0 21px
+  padding-bottom 47px
+
+  background-image url('../i/shelf.png')
+  background-image uri('../i/shelf.png')
+  background-position center bottom
+  background-repeat repeat-x
+
+  font-size 0
+  white-space nowrap
+
+  vertical-align bottom
+
+  &:before
+  &:after
+    content ''
+
+    display block
+
+    position absolute
+    bottom 0
+
+    width 27px
+    height 96px
+
+    background-position center center
+    background-repeat no-repeat
+
+  &:before
+    right 100%
+
+    background-image url('../i/shelf-before.png')
+    background-image uri('../i/shelf-before.png')
+
+  &:after
+    left 100%
+
+    background-image url('../i/shelf-after.png')
+    background-image uri('../i/shelf-after.png')
+
+  &__item
+    display inline-block
+
+    padding 0 9px
+
+    font-size 14px
 
 
 
@@ -646,6 +964,15 @@ a
       &_vk
         background-image url('../i/social__link_icon_vk.png')
         background-image uri('../i/social__link_icon_vk.png')
+
+
+
+.title
+  margin-left -.1em
+  padding .5em 0 1em
+
+  font-size 30px
+  font-weight 300
 
 
 

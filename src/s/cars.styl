@@ -1,0 +1,42 @@
+.car-model
+  display block
+
+  width 143px
+
+  color rgb(5,140,200)
+
+  &__icon
+    display block
+
+    margin 0 auto 7px
+
+    background-position center center
+    background-repeat no-repeat
+
+    &_id
+      &_focus-1
+        width 117px
+        height 44px
+
+        background-image url('../i/car-model__icon_id_focus-1.png')
+        background-image uri('../i/car-model__icon_id_focus-1.png')
+
+  &__title
+    display block
+
+    padding-bottom 5px
+
+    white-space nowrap
+
+  &.is-active
+    color black
+    font-weight 700
+    letter-spacing .05em
+    text-transform uppercase
+
+  &.is-active &__title
+    padding-bottom 3px
+
+    font-size 16px
+
+    text-shadow 0 1px 0 rgba(255,255,255,.5)

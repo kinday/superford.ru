@@ -1,0 +1,54 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Форд
+      li(elem = 'item') Фокус-1 98-05
+
+  div(block = 'shelf-wrapper')
+    ul(block = 'shelf')
+      li(elem = 'item')
+        h1(block = 'car-model', mix = 'block:is-active', href = '#')
+          i(elem = 'icon', mod = 'id:focus-1')
+          span(elem = 'title') Фокус-1 98—05
+
+  div(block = 'details-wrapper')
+    ul(block = 'details')
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:transmission')
+          span(elem = 'title') Коробка передач
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:engine')
+          span(elem = 'title') Двигатель
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:lights')
+          span(elem = 'title') Оптика
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:climate')
+          span(elem = 'title') Кондиционер
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:seats')
+          span(elem = 'title') Сидения
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:gauges')
+          span(elem = 'title') Приборная панель
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:body')
+          span(elem = 'title') Кузов
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:liquids')
+          span(elem = 'title') Жидкости
+      li(elem = 'item')
+        a(block = 'detail-type', href = '#')
+          i(elem = 'icon', mod = 'id:chassis')
+          span(elem = 'title') Ходовая
