@@ -1,0 +1,61 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Форд
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Фокус-1 98-05
+      li(elem = 'item'): a(elem = 'link', href = '/catalog-brand') Безопасность
+      li(elem = 'item') Аэрбег в руль
+
+  article(block = 'product')
+    section(elem = 'photos')
+      img(src = '../images/focus-2_steering.jpg')
+    section(elem = 'description')
+      h1(block = 'title') Аэрбег в руль Форд Фокус-2 05-14 3-спицевый в комплекте с рулем, синий
+      p(block = 'price') 5<span class="thsp"></span>000 <span class="r">руб.</span>
+      table(elem = 'specs')
+        tr(block = 'spec')
+          td(elem = 'title'): span Артикул
+          td(elem = 'value') SF84718
+        tr(block = 'spec')
+          td(elem = 'title'): span Производитель
+          td(elem = 'value') Pilenga (Италия)
+      div
+        p(block = 'product-status', mod = 'is:available') В магазине 6 шт.
+        button(block = 'button', mod = 'type:buy,size:small')
+            i.icon(block = 'icon', elem = 'buy')
+            | Купить
+
+  div(block = 'content', elem = 'related')
+    h5(block = 'title') С этим товаром покупают
+    ul(block = 'related')
+      li(elem = 'item')
+        p: img(src = '../images/c-max_pepyaka.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 13<span class="thsp"></span>000 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_brakes.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 27<span class="thsp"></span>300 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_mirror.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 3<span class="thsp"></span>600 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_overdrive.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 9<span class="thsp"></span>000 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_pepyaka.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 18<span class="thsp"></span>400 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_mirror.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 10<span class="thsp"></span>100 <span class="r">руб.</span>
+      li(elem = 'item')
+        p: img(src = '../images/c-max_brakes.jpg')
+        p: a(href = '#') Аэрбег в руль Форд Фокус-2
+        p(elem = 'price') 13<span class="thsp"></span>000 <span class="r">руб.</span>
