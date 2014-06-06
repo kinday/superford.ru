@@ -1,0 +1,29 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item') Корзина
+
+  h1(block = 'title') Вход в магазин
+
+  div(block = 'twocol')
+    div(elem = 'column')
+      form(block = 'form', action = '')
+        h3(block = 'caption') Регистрация
+        p(block = 'field')
+          label(elem = 'label', for = 'reg-email') Эл. почта
+          input(elem = 'input', mix = 'block:input', type = 'text', id = 'reg-email', name = 'email')
+        button(block = 'button', mod = 'size:small,type:login') Зарегистрироваться
+
+    div(elem = 'column')
+      form(block = 'form', action = '')
+        h3(block = 'caption') Вход под паролем
+        p(block = 'field')
+          label(elem = 'label', for = 'auth-email') Эл. почта
+          input(elem = 'input', mix = 'block:input', type = 'text', id = 'auth-email', name = 'email')
+        p(block = 'field')
+          label(elem = 'label', for = 'auth-password') Пароль
+          input(elem = 'input', mix = 'block:input', type = 'password', id = 'auth-password', name = 'password')
+        button(block = 'button', mod = 'size:small,type:login') Войти

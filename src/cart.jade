@@ -1,0 +1,85 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item') Корзина
+
+  h1(block = 'title') Корзина
+
+  ul(block = 'progress')
+    li(elem = 'step').is-active Выбор
+    li(elem = 'step') Оформление
+    li(elem = 'step') Доставка
+    li(elem = 'step') Оплата
+
+  table(block = 'products')
+    thead(elem = 'header')
+      th(elem = 'header-title')
+      th(elem = 'header-title') Наименование
+      th(elem = 'header-title') Артикул
+      th(elem = 'header-title') Цена
+      th(elem = 'header-title') Количество
+      th(elem = 'header-title') Сумма
+      th(elem = 'header-title')
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_mirror.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td SP81613
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td(elem = 'quantity')
+        input(block = 'input', mod = 'size:small', type = 'text', value = '2').js-quantity
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td: a(elem = 'delete') ×
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_brakes.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td QL919-31
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td(elem = 'quantity')
+        input(block = 'input', mod = 'size:small', type = 'text', value = '2').js-quantity
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td: a(elem = 'delete') ×
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_pepyaka.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td JK31464
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td(elem = 'quantity')
+        input(block = 'input', mod = 'size:small', type = 'text', value = '2').js-quantity
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td: a(elem = 'delete') ×
+    tr(elem = 'row')
+      td
+        a(href = '#')
+          img(src = '../images/c-max_overdrive.jpg')
+      td(elem = 'titles')
+        h3(elem = 'title', mix = 'block:compact-text'): a(elem = 'link', href = '#'): b C-MAX Зеркало левое с регулировочным мотором
+        h5(elem = 'subtitle') Depo, 431-1176LMLD-EM
+      td ZZ16469A
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td(elem = 'quantity')
+        input(block = 'input', mod = 'size:small', type = 'text', value = '2').js-quantity
+      td(elem = 'price') 83<span class="thsp"></span>500 <span class="r">руб.</span>
+      td: a(elem = 'delete') ×
+
+  div(block = 'totals')
+    p(elem = 'delivery') + доставка 800 <span class="r">руб.</span>
+    p(elem = 'result')
+      | Итого: 
+      span(block = 'price') 5<span class="thsp"></span>000 <span class="r">руб.</span>
+    br
+    button(block = 'button', mod = 'size:small,type:sec') Следующий шаг <span class="fontless">❯</span>

@@ -100,7 +100,7 @@ a
 
 
 .button
-  padding 10px 7px
+  padding 10px 15px
 
   background-color tint(blue,10%)
   background-image linear-gradient(to bottom, rgba(0,0,0,0), rgba(shade(blue,50%),.25) 50%, rgba(0,0,0,0))
@@ -171,6 +171,14 @@ a
     background-image linear-gradient(to bottom, rgba(255,255,255,.2), rgba(shade(blue,50%),.25) 50%, rgba(0,0,0,0))
     box-shadow inset 0 2px 6px rgba(0,0,0,.25)
     color white
+
+
+
+.caption
+  padding-bottom 1.5em
+
+  font-size 18px
+  font-style italic
 
 
 
@@ -407,6 +415,24 @@ a
 
 
 
+.field
+  padding-bottom 20px
+
+  &__input
+  &__label
+    display inline-block
+
+  &__input
+    max-width 69%
+
+    vertical-align baseline
+
+  &__label
+    width 30%
+    max-width 150px
+
+
+
 .fontless
   font sans-serif
 
@@ -436,6 +462,17 @@ a
 
 
 
+.form
+  max-width 600px
+  margin 0 auto
+
+  padding 30px
+
+  background-color tint(green,85%)
+  border-radius 10px
+
+
+
 .header-wrapper
   padding 20px 0
 
@@ -453,6 +490,8 @@ a
 
   width 100%
 
+  vertical-align top
+
   &__logotype
   &__toolbox
     display table-cell
@@ -469,6 +508,16 @@ a
   padding 10px 0
 
   font 700 24px/25px 'PT Serif', Georgia, Times, 'Times New Roman', serif
+
+
+
+.hint
+  max-width 500px
+
+  padding-bottom 20px
+
+  color shade(gray,50%)
+  font-size 13px
 
 
 
@@ -545,9 +594,37 @@ a
 
 
 
+.info
+  max-width 600px
+  margin 0 auto
+
+  padding 30px
+
+  background-color tint(blue,85%)
+  border-radius 10px
+
+
+
 .input
+  width 100%
+
+  padding 4px 10px
+
   background-color white
+  border 1px solid gray
   border-radius 5px
+
+  line-height 1
+
+  &_size
+    &_small
+      max-width 60px
+
+    &_medium
+      max-width 120px
+
+    &_big
+      max-width 200px
 
 
 
@@ -826,6 +903,11 @@ a
   &__price
     white-space nowrap
 
+  &__quantity
+    font-size 20px
+    font-weight 700
+    text-align center
+
   &__row
     border-bottom 1px solid gray
 
@@ -838,6 +920,101 @@ a
   &__titles
     text-align left
     text-transform uppercase
+
+
+
+.progress
+  width 600px
+  height 3px
+  margin 0 auto
+  margin-bottom 60px
+
+  background-color gray
+
+  text-align justify
+
+  &:after
+    content ''
+
+    display inline-block
+
+    width 100%
+
+  &__step
+    position relative
+
+    display inline-block
+
+    padding-top 15px
+
+    font-size 13px
+
+    &:before
+      content ''
+
+      position absolute
+      top -9px
+      left 50%
+
+      display block
+
+      width 14px
+      height 14px
+      margin-left -10px
+
+      background-color white
+      border 3px solid gray
+      border-radius 100%
+
+    &:first-child
+      left -22px
+
+    &:last-child
+      right -25px
+
+    &.is-active
+      color green
+
+      &:before
+        border 3px solid currentColor
+
+      &:after
+        content ''
+
+        position absolute
+        top -3px
+        left 50%
+
+        display block
+
+        width 8px
+        height 8px
+        margin-left -4px
+
+        background-color currentColor
+        border-radius 100%
+
+    &.is-done
+      color gray
+
+      &:before
+        border 3px solid currentColor
+
+      &:after
+        content ''
+
+        position absolute
+        top -3px
+        left 50%
+
+        display block
+
+        width 8px
+        height 8px
+        margin-left -4px
+
+        background-color currentColor
+        border-radius 100%
 
 
 
@@ -1063,6 +1240,36 @@ a
       padding-right 10px
 
 
+
+.totals
+  padding 20px 0
+
+  text-align right
+  vertical-align baseline
+
+  &__delivery
+    color shade(gray,20%)
+
+
+
+.twocol
+  display table
+
+  width 100%
+
+  margin-bottom 20px
+
+  &__column
+    display table-cell
+
+    width 50%
+    padding 0 20px
+
+    &:first-child
+      padding-left 0
+
+    &:last-child
+      padding-right 0
 
 
 .wave

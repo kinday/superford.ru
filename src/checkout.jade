@@ -1,0 +1,85 @@
+extends default.layout
+
+block content
+  nav(block = 'breadcrumbs-wrapper')
+    ul(block = 'breadcrumbs')
+      li(elem = 'item'): a(elem = 'link', href = '/') Главная
+      li(elem = 'item') Корзина
+
+  h1(block = 'title') Корзина
+
+  blockquote(block = 'info')
+    p(block = 'hint') <a href="/authentication.html">Вход под паролем</a> для зарегистрированных покупателей. <a href="/authentication.html">Зарегистрируйтесь</a>, чтобы в будущем совершать покупки без ввода персональных данных.
+
+  ul(block = 'progress')
+    li(elem = 'step').is-done Выбор
+    li(elem = 'step').is-active Оформление
+    li(elem = 'step') Доставка
+    li(elem = 'step') Оплата
+
+  form(block = 'form', action = '')
+    h3(block = 'caption') Быстрое оформление заказа
+    p(block = 'field')
+      label(elem = 'label', for = 'firstname') Имя
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'firstname', name = 'firstname')
+    p(block = 'field')
+      label(elem = 'label', for = 'lastname') Фамилия
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'lastname', name = 'lastname')
+    br
+    p(block = 'field')
+      label(elem = 'label', for = 'email') Эл. почта
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'email', name = 'email')
+    p(block = 'field')
+      label(elem = 'label', for = 'lastname') Номер телефона
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'lastname', name = 'lastname')
+    //- br
+    //- div(block = 'field')
+    //-   p(elem = 'label')
+    //-     label Пол
+    //-   p(elem = 'input')
+    //-     label
+    //-       input(type = 'radio', name = 'sex', value = 'male')
+    //-       |  Мужской
+    //-     br
+    //-     label
+    //-       input(type = 'radio', name = 'sex', value = 'female')
+    //-       |  Женский
+    //- div(block = 'field')
+    //-   p(elem = 'label')
+    //-     label Дата рождения
+    //-   p(elem = 'input')
+    //-     select(name='day')
+    //-       option(disabled, selected) День
+    //-       - for(var i; i < 32; i++)
+    //-         option(value=i)= i
+    //-     select(name='month')
+    //-       option(disabled, selected) Месяц
+    //-       - each v, i in ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+    //-         option(value=i)= v
+    //-     select(name='year')
+    //-       option(disabled, selected) Год
+    //-       - for(var i = 2014; i > 1900; i--)
+    //-         option(value=i)= i
+    br
+    p(block = 'field')
+      label(elem = 'label', for = 'lastname') Организация
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'lastname', name = 'lastname')
+    p(block = 'field')
+      label(elem = 'label', for = 'lastname') Адрес
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'lastname', name = 'lastname')
+    div(block = 'field')
+      p(elem = 'label')
+        label Страна
+      p(elem = 'input')
+        select(name='country')
+          option(value='177', selected='selected') Россия
+    p(block = 'field')
+      label(elem = 'label', for = 'lastname') Город
+      input(elem = 'input', mix = 'block:input', type = 'text', id = 'lastname', name = 'lastname')
+    br
+    div(block = 'field')
+      p(elem = 'label')
+      p(elem = 'input')
+        button(block = 'button', mod = 'size:small,type:login') Продолжить
+    br
+    p(block = 'hint') Личные данные, которые вы предоставляете, используются для обработки ваших заказов и сообщений, а так же для обеспечения доступа к интересующей вас информации. Вы имеете право изменить и удалить любые ваши персональные данные на странице «Моя учетная запись». Нажатие кнопки «Продолжить» означает согласие с данным пунктом.
